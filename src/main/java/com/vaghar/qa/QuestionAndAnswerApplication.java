@@ -1,8 +1,6 @@
 package com.vaghar.qa;
 
 import com.vaghar.qa.service.IQuestionService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -27,16 +25,16 @@ public class QuestionAndAnswerApplication {
             BufferedReader reader = new BufferedReader(
                     new InputStreamReader(System.in));
             while (true) {
-                System.out.println("\n\n\nWELCOME TO QA\n");
+                System.out.println("\n\n\nWELCOME TO Q&A\n");
                 System.out.println("Choose desired action:");
-                System.out.println("1.Enter question and answers into System.");
-                System.out.println("2.Ask From System.");
+                System.out.println("1.Enter question and answers into system.");
+                System.out.println("2.Ask from system.");
                 System.out.println("3.Exit.");
 
                 int action = Integer.parseInt(reader.readLine());
 
                 if (action == 1) {
-                    System.out.println("Now Enter Your Question And Answers With This Signature : (Question ? \"\"Answers\"\"\"\"Answers\"\" ...)");
+                    System.out.println("Now enter your question and Answers with this signature : (Question?\"Answers1\"\"Answers2\"...\"AnswersN\")");
                     String questionAndAnswers = reader.readLine();
                     int errorCode = iService.save(questionAndAnswers);
                     if (errorCode == 200) {

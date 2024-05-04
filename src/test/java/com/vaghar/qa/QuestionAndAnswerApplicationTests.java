@@ -16,7 +16,7 @@ class QuestionAndAnswerApplicationTests {
 
     @Test
     public void successfulQAInsertion() {
-        String questionAndAnswers = "What's your favorite food ? \"ghorme sabze\" \"zereshk polo ba morgh\"";
+        String questionAndAnswers = "What's peter favorite food ? \"spaghetti\" \"sushi\"";
         int errorCode = iService.save(questionAndAnswers);
         Assertions.assertEquals(200, errorCode);
     }

@@ -43,7 +43,9 @@ public class QuestionService implements IQuestionService {
         QuestionEntity question = new QuestionEntity();
         question.setTitle(questionTitle);
         int errorCode = manageAnswers(question, answers);
-        repository.save(question);
+        if (errorCode == 200) {
+            repository.save(question);
+        }
         return errorCode;
     }
 
